@@ -21,7 +21,8 @@ android {
                 version "3.6.4"
                 arguments '-DBUILD_TESTING=OFF', '-DANDROID_TOOLCHAIN=gcc'
                 cFlags "-std=c11"
-                abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+//                abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+                abiFilters 'armeabi'
             }
         }
     }
@@ -38,6 +39,13 @@ android {
     externalNativeBuild {
         cmake {
             path "CMakeLists.txt"
+        }
+    }
+    //重命名aar及版本号
+    def version = 1.0
+    android.libraryVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName = "sflogan-${version}-${variant.name.capitalize()}.aar"
         }
     }
 }
