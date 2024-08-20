@@ -23,6 +23,7 @@
 package com.dianping.logan;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import java.io.File;
 
@@ -56,6 +57,10 @@ public abstract class SendLogRunnable implements Runnable {
             return;
         }
         File file = new File(mSendAction.uploadPath);
+        if (Logan.sDebug) {
+            Log.d("Logan", "file upload AbsolutePath:" + file.getAbsolutePath());
+            Log.d("Logan", "file upload name:" + file.getName());
+        }
         sendLog(file);
     }
 

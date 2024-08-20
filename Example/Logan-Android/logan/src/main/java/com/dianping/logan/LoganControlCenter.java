@@ -83,7 +83,7 @@ class LoganControlCenter {
         return sLoganControlCenter;
     }
 
-    void write(String log, int flag) {
+    void write(String tag,String log, int flag) {
         if (TextUtils.isEmpty(log)) {
             return;
         }
@@ -97,6 +97,7 @@ class LoganControlCenter {
             isMain = true;
         }
         action.log = log;
+        action.tag = tag;
         action.localTime = System.currentTimeMillis();
         action.flag = flag;
         action.isMainThread = isMain;

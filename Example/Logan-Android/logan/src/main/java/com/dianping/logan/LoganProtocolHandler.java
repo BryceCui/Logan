@@ -26,7 +26,7 @@ public interface LoganProtocolHandler {
 
     void logan_flush();
 
-    void logan_write(int flag, String log, long local_time, String thread_name,
+    void logan_write(int flag, String tag,String log, long local_time, String thread_name,
             long thread_id, boolean is_main);
 
     void logan_open(String file_name);

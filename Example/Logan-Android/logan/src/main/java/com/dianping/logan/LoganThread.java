@@ -220,7 +220,7 @@ class LoganThread extends Thread {
         if (!mIsSDCard) { //如果大于50M 不让再次写入
             return;
         }
-        mLoganProtocol.logan_write(action.flag, action.log, action.localTime, action.threadName,
+        mLoganProtocol.logan_write(action.flag, action.tag, action.log, action.localTime, action.threadName,
                 action.threadId, action.isMainThread);
     }
 

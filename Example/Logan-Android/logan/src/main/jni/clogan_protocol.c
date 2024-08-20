@@ -24,16 +24,18 @@
 
 JNIEXPORT jint JNICALL
 Java_com_dianping_logan_CLoganProtocol_clogan_1write(JNIEnv *env, jobject instance, jint flag,
-                                                     jstring log_, jlong local_time,
+                                                     jstring tag_,    jstring log_, jlong local_time,
                                                      jstring thread_name_, jlong thread_id,
                                                      jint is_main) {
     const char *log = (*env)->GetStringUTFChars(env, log_, 0);
+    const char *tag = (*env)->GetStringUTFChars(env, tag_, 0);
     const char *thread_name = (*env)->GetStringUTFChars(env, thread_name_, 0);
 
-    jint code = (jint) clogan_write(flag, log, local_time, thread_name, thread_id, is_main);
+    jint code = (jint) clogan_write(flag, tag,log, local_time, thread_name, thread_id, is_main);
 
     (*env)->ReleaseStringUTFChars(env, log_, log);
     (*env)->ReleaseStringUTFChars(env, thread_name_, thread_name);
+    (*env)->ReleaseStringUTFChars(env, tag_, tag);
     return code;
 
 }

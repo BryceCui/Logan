@@ -28,6 +28,7 @@
 #include "console_util.h"
 
 static const char *log_key = "c";
+static const char *tag_key = "t";
 static const char *flag_key = "f";
 static const char *localtime_key = "l";
 static const char *threadname_key = "n";
@@ -35,7 +36,7 @@ static const char *threadid_key = "i";
 static const char *ismain_key = "m";
 
 Construct_Data_cLogan *
-construct_json_data_clogan(char *log, int flag, long long local_time, char *thread_name,
+construct_json_data_clogan(char *tag,char *log, int flag, long long local_time, char *thread_name,
                            long long thread_id, int is_main) {
     Construct_Data_cLogan *construct_data = NULL;
     cJSON *root = NULL;
@@ -44,6 +45,7 @@ construct_json_data_clogan(char *log, int flag, long long local_time, char *thre
     map = create_json_map_logan();
     if (NULL != root) {
         if (NULL != map) {
+            add_item_string_clogan(map, tag_key, tag);
             add_item_string_clogan(map, log_key, log);
             add_item_number_clogan(map, flag_key, (double) flag);
             add_item_number_clogan(map, localtime_key, (double) local_time);

@@ -21,16 +21,16 @@ int main(int argc, const char **argv) {
   printf("[now]: %s\n", now_str);
 
   clogan_flush();
-  clogan_write(10, now_str, ts, "main", 1, 1);
-  clogan_write(10, "[log 1]", ts++, "main", 1, 1);
-  clogan_write(10, "[log 2]", ts++, "main", 1, 1);
-  clogan_write(10, "[log 3]", ts++, "main", 1, 1);
-  clogan_write(10, "[log 4]", ts++, "main", 1, 1);
-  clogan_write(10, "[log 5]", ts++, "main", 1, 1);
-  clogan_write(10, "how", ts++, "main", 1, 1);
-  clogan_write(10, "are", ts++, "main", 1, 1);
-  clogan_write(10, "you", ts++, "main", 1, 1);
-  clogan_write(10, "fine", ts++, "main", 1, 1);
+//  clogan_write(10, now_str, ts, "main", 1, 1);
+//  clogan_write(10, "[log 1]", ts++, "main", 1, 1);
+//  clogan_write(10, "[log 2]", ts++, "main", 1, 1);
+//  clogan_write(10, "[log 3]", ts++, "main", 1, 1);
+//  clogan_write(10, "[log 4]", ts++, "main", 1, 1);
+//  clogan_write(10, "[log 5]", ts++, "main", 1, 1);
+//  clogan_write(10, "how", ts++, "main", 1, 1);
+//  clogan_write(10, "are", ts++, "main", 1, 1);
+//  clogan_write(10, "you", ts++, "main", 1, 1);
+//  clogan_write(10, "fine", ts++, "main", 1, 1);
   //  clogan_flush();
 
   printf("[exit]\n");

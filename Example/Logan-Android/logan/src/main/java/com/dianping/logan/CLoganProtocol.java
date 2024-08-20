@@ -84,7 +84,7 @@ class CLoganProtocol implements LoganProtocolHandler {
      * @param thread_id   线程ID
      * @param is_main     是否主线程
      */
-    private native int clogan_write(int flag, String log, long local_time, String thread_name,
+    private native int clogan_write(int flag,  String tag,String log, long local_time, String thread_name,
             long thread_id, int is_main);
 
     private native void clogan_flush();
@@ -159,14 +159,13 @@ class CLoganProtocol implements LoganProtocolHandler {
     }
 
     @Override
-    public void logan_write(int flag, String log, long local_time, String thread_name,
-            long thread_id, boolean is_main) {
+    public void logan_write(int flag, String tag, String log, long local_time, String thread_name, long thread_id, boolean is_main) {
         if (!mIsLoganOpen || !sIsCloganOk) {
             return;
         }
         try {
             int isMain = is_main ? 1 : 0;
-            int code = clogan_write(flag, log, local_time, thread_name, thread_id,
+            int code = clogan_write(flag,tag, log, local_time, thread_name, thread_id,
                     isMain);
             if (code != ConstantCode.CloganStatus.CLOGAN_WRITE_SUCCESS || Logan.sDebug) {
                 loganStatusCode(ConstantCode.CloganStatus.CLOGAN_WRITE_STATUS, code);

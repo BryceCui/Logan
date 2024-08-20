@@ -540,9 +540,11 @@ void insert_header_file_clogan(cLogan_model *loganModel) {
     int flag = 1;
     long long local_time = get_system_current_clogan();
     char *thread_name = "clogan";
+    char *tag = "clogan tag";
     long long thread_id = 1;
     int ismain = 1;
-    Construct_Data_cLogan *data = construct_json_data_clogan(log, flag, local_time, thread_name,
+    Construct_Data_cLogan *data = construct_json_data_clogan(tag, log, flag, local_time,
+                                                             thread_name,
                                                              thread_id, ismain);
     if (NULL == data) {
         return;
@@ -679,7 +681,8 @@ void clogan_write_section(char *data, int length) {
  @param ismain 是否为主线程，0为是主线程，1位非主线程 (int)
  */
 int
-clogan_write(int flag, char *log, long long local_time, char *thread_name, long long thread_id,
+clogan_write(int flag, char *tag, char *log, long long local_time, char *thread_name,
+             long long thread_id,
              int is_main) {
     int back = CLOGAN_WRITE_FAIL_HEADER;
     if (!is_init_ok || NULL == logan_model || !is_open_ok) {
@@ -687,7 +690,7 @@ clogan_write(int flag, char *log, long long local_time, char *thread_name, long 
         return back;
     }
 
-    if(logan_model->file_len > max_file_len) {
+    if (logan_model->file_len > max_file_len) {
         printf_clogan("clogan_write > beyond max file , cant write log\n");
         back = CLOAGN_WRITE_FAIL_MAXFILE;
         return back;
@@ -724,7 +727,8 @@ clogan_write(int flag, char *log, long long local_time, char *thread_name, long 
         }
     }
 
-    Construct_Data_cLogan *data = construct_json_data_clogan(log, flag, local_time, thread_name,
+    Construct_Data_cLogan *data = construct_json_data_clogan(tag, log, flag, local_time,
+                                                             thread_name,
                                                              thread_id, is_main);
     if (NULL != data) {
         clogan_write_section(data->data, data->data_len);

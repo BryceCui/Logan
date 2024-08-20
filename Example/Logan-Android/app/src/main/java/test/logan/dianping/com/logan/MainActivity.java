@@ -57,6 +57,11 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         initView();
         mSendLogRunnable = new RealSendLogRunnable();
+        for (int i = 0; i <100 ; i++) {
+            Logan.w("这是tag"+i,":啊哈哈哈哈66666", 2);
+            loganTest();
+        }
+        loganSend();
     }
 
     private void initView() {
@@ -70,13 +75,12 @@ public class MainActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Logan.w("啊哈哈哈哈66666", 2);
+                Logan.w("tag","啊哈哈哈哈66666", 2);
             }
         });
         batchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loganTest();
             }
         });
         sendBtn.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +111,7 @@ public class MainActivity extends Activity {
                 try {
                     for (int i = 0; i < 9; i++) {
                         Log.d(TAG, "times : " + i);
-                        Logan.w(String.valueOf(i), 1);
+                        Logan.w("tag",String.valueOf(i), 1);
                         Thread.sleep(5);
                     }
                     Log.d(TAG, "write log end");

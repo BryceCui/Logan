@@ -51,13 +51,13 @@ class LoganProtocol implements LoganProtocolHandler {
     }
 
     @Override
-    public void logan_write(int flag, String log, long local_time, String thread_name,
-            long thread_id, boolean is_main) {
+    public void logan_write(int flag, String tag, String log, long local_time, String thread_name, long thread_id, boolean is_main) {
         if (mCurProtocol != null) {
-            mCurProtocol.logan_write(flag, log, local_time, thread_name, thread_id,
+            mCurProtocol.logan_write(flag, tag,log, local_time, thread_name, thread_id,
                     is_main);
         }
     }
+
 
     @Override
     public void logan_open(String file_name) {

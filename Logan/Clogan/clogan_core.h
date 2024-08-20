@@ -72,7 +72,7 @@ int clogan_open(const char *pathname); //打开一个文件的写入
  is_main 是否为主线程，0为是主线程，1位非主线程 (int)
  */
 int
-clogan_write(int flag, char *log, long long local_time, char *thread_name, long long thread_id,
+clogan_write(int flag,char *tag, char *log, long long local_time, char *thread_name, long long thread_id,
              int is_main);
 
 /**

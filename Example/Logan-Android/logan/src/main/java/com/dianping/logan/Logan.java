@@ -22,6 +22,8 @@
 
 package com.dianping.logan;
 
+import android.util.Log;
+
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,11 +46,11 @@ public class Logan {
      * @param type 表示日志类型
      * @brief Logan写入日志
      */
-    public static void w(String log, int type) {
+    public static void w(String tag,String log, int type) {
         if (sLoganControlCenter == null) {
             throw new RuntimeException("Please initialize Logan first");
         }
-        sLoganControlCenter.write(log, type);
+        sLoganControlCenter.write(tag,log, type);
     }
 
     /**

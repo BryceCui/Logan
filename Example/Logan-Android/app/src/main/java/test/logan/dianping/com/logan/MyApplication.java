@@ -18,16 +18,13 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         initLogan();
-        Logan.w("MyApplication onCreate", 3);
-        Logan.w("MyApplication onCreate", 3);
-        Logan.w("MyApplication onCreate", 3);
+
     }
 
     private void initLogan() {
         LoganConfig config = new LoganConfig.Builder()
                 .setCachePath(getApplicationContext().getFilesDir().getAbsolutePath())
-                .setPath(getApplicationContext().getExternalFilesDir(null).getAbsolutePath()
-                        + File.separator + FILE_NAME)
+                .setPath(getApplicationContext().getFilesDir().getAbsolutePath()+ "test")
                 .setEncryptKey16("0123456789012345".getBytes())
                 .setEncryptIV16("0123456789012345".getBytes())
                 .build();

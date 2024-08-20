@@ -25,6 +25,7 @@ package com.dianping.logan;
 import android.text.TextUtils;
 
 class WriteAction {
+    String tag;
 
     String log; //日志
 
