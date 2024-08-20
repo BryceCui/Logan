@@ -7,6 +7,7 @@
 
     <Button
         android:id="@+id/write_batch_btn"
+        android:focusable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -15,6 +16,7 @@
         android:textColor="@android:color/white" />
 
     <Button
+        android:focusable="true"
         android:id="@+id/write_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,12 +56,16 @@
         android:layout_margin="10dp"
         android:background="@android:color/background_dark"
         android:text="测试Logan默认上报方式"
+        android:focusable="true"
+
         android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/show_log_file_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:focusable="true"
+
         android:layout_margin="10dp"
         android:background="@android:color/background_dark"
         android:text="查看所有日志文件信息"

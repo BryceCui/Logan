@@ -45,7 +45,8 @@ android {
     def version = 1.0
     android.libraryVariants.all { variant ->
         variant.outputs.all { output ->
-            outputFileName = "sflogan-${version}-${variant.name.capitalize()}.aar"
+//            outputFileName = "sflogan-${version}-${variant.name.capitalize()}.aar"
+            outputFileName = "shlogan-${version}.aar"
         }
     }
 }
