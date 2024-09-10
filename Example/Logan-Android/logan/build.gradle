@@ -42,7 +42,7 @@ android {
         }
     }
     //重命名aar及版本号
-    def version = 1.0
+    def version = 1.1
     android.libraryVariants.all { variant ->
         variant.outputs.all { output ->
 //            outputFileName = "sflogan-${version}-${variant.name.capitalize()}.aar"
